@@ -1,0 +1,33 @@
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>App_Camara</ion-card-title>
+      <ion-card-subtitle></ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <div class="img">
+        <ion-img [src]="getImageUrl()"></ion-img>
+      </div>
+      <ion-fab slot="fixed" vertical="bottom" horizontal="center">
+        <ion-fab-button size="small">
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+        <ion-fab-list side="top">
+          <ion-fab-button color="warning" (click)="opcionPicture()">
+            <ion-icon name="chevron-up"></ion-icon>
+          </ion-fab-button>
+        </ion-fab-list>
+        <ion-fab-list side="end">
+          <ion-fab-button color="success" (click)="galeryPicture()">
+            <ion-icon name="images"></ion-icon>
+          </ion-fab-button>
+        </ion-fab-list>
+        <ion-fab-list side="start">
+          <ion-fab-button color="tertiary" (click)="takePicture()">
+            <ion-icon name="camera"></ion-icon>
+          </ion-fab-button>
+        </ion-fab-list>
+      </ion-fab>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
