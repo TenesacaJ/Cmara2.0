@@ -1,5 +1,5 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
+<ion-header [translucent]="true" class="ion-no-border">
+  <ion-toolbar mode="ios">
     <ion-title>
       Blank
     </ion-title>
@@ -14,7 +14,7 @@
     </ion-card-header>
     <ion-card-content>
       <ion-button (click)="takePicture()">Tomar Foto</ion-button>
-
+      <ion-button (click)="galery()">Abrir Galeria</ion-button>
       <ion-img [src]="getimage()"></ion-img>
     </ion-card-content>
   </ion-card>

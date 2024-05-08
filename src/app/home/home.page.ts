@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Camera, CameraResultType} from '@capacitor/camera'
+import { Camera, CameraResultType, CameraSource} from '@capacitor/camera'
 
 @Component({
   selector: 'app-home',
@@ -9,6 +9,8 @@ import { Camera, CameraResultType} from '@capacitor/camera'
 export class HomePage implements OnInit {
 
   private image:any;
+
+  imagen: string='assets/shapes.svg';
 
   constructor() {}
 
@@ -20,10 +22,20 @@ export class HomePage implements OnInit {
     this.image = await Camera.getPhoto({
       quality: 90,
       resultType: CameraResultType.Uri,
+      source: CameraSource.Camera
+    });
+  };
+
+  async galery () {
+    this.image = await Camera.getPhoto({
+      quality: 90,
+      resultType: CameraResultType.Uri,
+      source: CameraSource.Photos
     });
   };
 
   getimage () {
+    var imageUrl = this.image.webPath;
     return this.image
   }
 
